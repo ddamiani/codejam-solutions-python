@@ -1,0 +1,9 @@
+# Python stuff
+*.pyc
+*.egg-info/
+# Virtualenv stuff
+.Python
+bin/
+include/
+lib/
+man/
