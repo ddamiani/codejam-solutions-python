@@ -1,6 +1,6 @@
-'''
+"""
 Unittests for the Tongues problem runner
-'''
+"""
 
 import os
 import sys

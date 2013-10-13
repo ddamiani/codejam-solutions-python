@@ -1,6 +1,6 @@
-'''
+"""
 Unittests for the data module
-'''
+"""
 
 import unittest
 import codejam.tongues.data

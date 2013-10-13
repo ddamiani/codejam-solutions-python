@@ -1,6 +1,6 @@
-'''
+"""
 The main console script for the Python solutions to the Codejam problems
-'''
+"""
 import sys
 import inspect
 import pkgutil
@@ -11,14 +11,14 @@ from codejam.codejambase import CodeJamBase
 
 
 def run_func(args):
-    '''
+    """
     Runs the specified Codejam problem if it exists
-    '''
+    """
     try:
         proj_mod = importlib.import_module('codejam.%s.runner' % args.problem)
 
         def valid_class(obj):
-            '''Simple predicate function used to inspect the module'''
+            """Simple predicate function used to inspect the module"""
             return inspect.isclass(obj) \
                 and proj_mod.__name__ == obj.__module__ \
                 and issubclass(obj, CodeJamBase)
@@ -41,9 +41,9 @@ def run_func(args):
 
 
 def list_func(_):
-    '''
+    """
     Lists all available Codejam solutions
-    '''
+    """
 
     print 'Listing all available Codejam solutions:'
 
@@ -57,9 +57,9 @@ def list_func(_):
 
 
 def parse_cmdline():
-    '''
+    """
     Parses the commandline args for the codejam problem
-    '''
+    """
     parser = argparse.ArgumentParser(
         description='Command line runner for Google Codejam solutions'
     )
@@ -113,9 +113,9 @@ def parse_cmdline():
 
 
 def main():
-    '''
+    """
     Main function: parses the args and calls the proper codejam problem
-    '''
+    """
     try:
         args = parse_cmdline()
         return args.func(args)
@@ -123,3 +123,7 @@ def main():
         #    args.output_file.write(line)
     except KeyboardInterrupt:
         return 1
+
+
+if __name__ == '__main__':
+    main()

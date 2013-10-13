@@ -1,14 +1,14 @@
-'''
+"""
 Implementation of the Tongues Problem
-'''
+"""
 from codejam.codejambase import CodeJamBase
 from codejam.tongues.data import Translator
 
 
 class Tongues(CodeJamBase):
-    '''
+    """
     The main class of the solution of the Tongues Code Jam problem
-    '''
+    """
 
     def __init__(self, input_file, output_file, test_mode=False):
         super(Tongues, self).__init__(input_file, output_file, test_mode)

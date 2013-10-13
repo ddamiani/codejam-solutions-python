@@ -1,6 +1,6 @@
-'''
+"""
 codejam - Package for all modules related to codejam solutions
-'''
+"""
 
 try:
     __version__ = \

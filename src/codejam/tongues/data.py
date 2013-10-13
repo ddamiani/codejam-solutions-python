@@ -1,6 +1,6 @@
-'''
+"""
 Module containing the translation data
-'''
+"""
 
 
 NORMAL_LETTERS = '''
@@ -20,18 +20,18 @@ qz
 
 
 class Translator(object):
-    '''
+    """
     Class for performing translations
-    '''
+    """
 
     def __init__(self):
         self.normal_dict = None
         self.mutated_dict = None
 
     def _load(self):
-        '''
+        """
         Loads an initializes the dictionaries
-        '''
+        """
 
         self.normal_dict = {}
         self.mutated_dict = {}
@@ -42,23 +42,23 @@ class Translator(object):
 
     @classmethod
     def _get(cls, translator, value):
-        '''
+        """
         Function for performing the letter translation
-        '''
+        """
         return "".join([translator.get(c) for c in value])
 
     def get_mutated(self, value):
-        '''
+        """
         Returns the mutated letter corresponding to the given normal letter
-        '''
+        """
         if self.normal_dict is None:
             self._load()
         return self._get(self.normal_dict, value)
 
     def get_normal(self, value):
-        '''
-        Returns the normal letter corresopnding to the given mutated letter
-        '''
+        """
+        Returns the normal letter corresponding to the given mutated letter
+        """
         if self.mutated_dict is None:
             self._load()
         return self._get(self.mutated_dict, value)

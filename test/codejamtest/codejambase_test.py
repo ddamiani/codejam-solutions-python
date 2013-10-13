@@ -1,6 +1,6 @@
-'''
+"""
 Unittests for the codejambase module
-'''
+"""
 
 import os
 import sys
