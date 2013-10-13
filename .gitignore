@@ -3,7 +3,5 @@
 *.egg-info/
 # Virtualenv stuff
 .Python
-bin/
-include/
-lib/
-man/
+venv/
+.venv/
