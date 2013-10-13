@@ -2,6 +2,7 @@
 # Runs pep8, pylint, and unittests
 BASE_DIR="$( cd "$(dirname "$0")/.." ; pwd -P )"
 SRC_DIR="${BASE_DIR}/src"
+ENV_DIR=".venv"
 PACKAGES="codejam"
 STATUS=0
 
@@ -12,6 +13,18 @@ exit_msg() {
         echo "Exiting on test failures."
     fi
 }
+
+# Activate the virtualenv if one isn't active
+if [ -z "$VIRTUAL_ENV" ]; then
+    if [ -d "${BASE_DIR}/.venv" ]; then
+        echo -n "Activating the virtual environment... "
+        source "${BASE_DIR}/.venv/bin/activate"
+        echo "done"
+    else
+        echo "No virtualenv to activate!"
+        exit 1
+    fi
+fi
 
 # test if pep8 exists
 if ! hash pep8 2>/dev/null; then
