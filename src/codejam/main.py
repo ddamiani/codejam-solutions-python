@@ -73,7 +73,7 @@ def parse_cmdline():
     subparsers = parser.add_subparsers(title='subcommands')
     parser_run = subparsers.add_parser(
         'run',
-        description='Comand for running a specific Codejam solutions',
+        description='Command for running a specific Codejam solutions',
         help='runs a specific Codejam solution',
     )
 
@@ -103,7 +103,7 @@ def parse_cmdline():
 
     parser_list = subparsers.add_parser(
         'list',
-        description='Comand for listing available Codejam solutions',
+        description='Command for listing available Codejam solutions',
         help='lists available Codejam solution'
     )
 
