@@ -70,7 +70,10 @@ def parse_cmdline():
         version='%(prog)s ' + codejam.__version__
     )
 
-    subparsers = parser.add_subparsers(title='subcommands')
+    subparsers = parser.add_subparsers(title='subcommands', dest='subcommand')
+    # Needed because of change/'bug' in argpares behavior from 3.2 -> 3.3
+    subparsers.required = True
+
     parser_run = subparsers.add_parser(
         'run',
         description='Command for running a specific Codejam solutions',
