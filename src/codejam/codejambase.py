@@ -24,7 +24,7 @@ class CodeJamBase(object):
         try:
             self.num_cases = int(self.input_file.readline())
         except ValueError:
-            print 'The input file is malformed: No number of cases specified'
+            print('The input file is malformed: No number of cases specified')
             return 3
         return self.run()
 
@@ -46,8 +46,8 @@ class CodeJamBase(object):
         """
         if self.line_case > 0 and self.lines_consumed > self.num_cases * \
            self.line_case:
-            print 'All intended input lines (%d) have already been consumed!' \
-                  % self.num_cases * self.line_case
+            print('All intended input lines (%d) have already been consumed!'
+                  % self.num_cases * self.line_case)
 
         current_line = self.input_file.readline()
         if current_line:

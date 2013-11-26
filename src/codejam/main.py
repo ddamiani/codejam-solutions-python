@@ -25,18 +25,18 @@ def run_func(args):
 
         class_list = inspect.getmembers(proj_mod, valid_class)
         if len(class_list) != 1:
-            print 'The chosen solution %s is invalid:' % args.problem, \
-                  'It contains %d CodeJamBase classes' % len(class_list)
+            print('The chosen solution %s is invalid:' % args.problem,
+                  'It contains %d CodeJamBase classes' % len(class_list))
             return 2
 
-        print 'Running the \'%s\' Codejam solution:' % args.problem
+        print('Running the \'%s\' Codejam solution:' % args.problem)
         if args.output_file != sys.stdout:
-            print 'Solution output written to \'%s\'' % args.output_file.name
+            print('Solution output written to \'%s\'' % args.output_file.name)
         # the class we want in the first entry in the list and 2nd in the tuple
         solver = class_list[0][1](args.input_file, args.output_file)
         return solver.solve()
     except ImportError:
-        print 'No Codejam problem named \'%s\'' % args.problem
+        print('No Codejam problem named \'%s\'' % args.problem)
         return 2
 
 
@@ -45,12 +45,12 @@ def list_func(_):
     Lists all available Codejam solutions
     """
 
-    print 'Listing all available Codejam solutions:'
+    print('Listing all available Codejam solutions:')
 
     for _, modname, _ in pkgutil.iter_modules(codejam.__path__):
         try:
             importlib.import_module('codejam.%s.runner' % modname)
-            print modname
+            print(modname)
         except ImportError:
             pass
         #print "Found submodule %s (is a package: %s)" % (modname, ispkg)
